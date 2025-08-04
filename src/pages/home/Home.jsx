@@ -6,7 +6,7 @@ import "./home.css";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
 import Featured from "../../components/featured/featured";
-import Header from "../../components/Header/headertemp";
+import Header from "../../components/Header/header";
 
 const Home = () => {
   return (
