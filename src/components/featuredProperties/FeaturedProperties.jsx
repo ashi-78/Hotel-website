@@ -1,4 +1,4 @@
-import useFetch from "../../hooks/useFetchTemp";
+import useFetch from "../../hooks/useFetch";
 import "./FeaturedProperties.css";
 import a from "../../assets/a.avif";
 import c from "../../assets/c.webp";
