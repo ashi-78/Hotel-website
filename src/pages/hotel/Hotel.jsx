@@ -10,14 +10,13 @@ import {
   faFontAwesome,
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
-import useFetch from "../../hooks/useFetch";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
+import useFetch from "../../hooks/useFetch";
 
 const Hotel = () => {
   const location = useLocation();
