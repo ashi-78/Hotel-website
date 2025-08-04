@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch";
-import "./FeaturedProperties.css";
+import "./featuredProperties.css";
 import a from "../../assets/a.avif";
 import c from "../../assets/c.webp";
 import r from "../../assets/r.avif";
