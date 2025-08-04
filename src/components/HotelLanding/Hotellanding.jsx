@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
-import "./hotelLanding.css";
+import "./hotellanding.css";
 import img1 from "../../assets/hotelimg2.jpg"
 import img2 from "../../assets/hotelimg8.jpg"
 
