@@ -16,7 +16,7 @@ import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetchTemp";
 
 const Hotel = () => {
   const location = useLocation();

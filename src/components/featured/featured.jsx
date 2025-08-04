@@ -1,4 +1,4 @@
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetchTemp";
 import "./featured.css";
 
 import h1 from "../../assets/h14.avif";

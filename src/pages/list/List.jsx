@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import Header from "../../components/Header/header";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetchTemp";
 
 const List = () => {
   const location = useLocation();

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetchTemp";
 import { useNavigate } from "react-router-dom";
 import "./propertyList.css";
 
