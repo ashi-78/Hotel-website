@@ -1,7 +1,7 @@
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Navbar from "../../components/navbar/Navbar";
 import PropertyList from "../../components/propertyList/PropertyList";
-import Carousel from "../../components/carousel/Carousel"; // import carousel
+import Carousel from "../../components/carousel/carousel"; // import carousel
 import "./home.css";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
