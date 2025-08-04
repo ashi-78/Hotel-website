@@ -1,4 +1,3 @@
-import Featured from "../../components/featured/Featured";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Navbar from "../../components/navbar/Navbar";
 import PropertyList from "../../components/propertyList/PropertyList";
@@ -7,6 +6,7 @@ import "./home.css";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
+import Featured from "../../components/featured/featured";
 
 const Home = () => {
   return (
