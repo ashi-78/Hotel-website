@@ -1,0 +1,242 @@
+.header {
+  background: linear-gradient(rgba(47, 55, 57, 0.6), rgba(19, 3, 3, 0.6));
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 30px 10px 8px;
+  margin: 20px auto 0; /* Adds space above and centers horizontally */
+  width: 90vw;
+  transition: all 0.3s ease;
+  border-radius: 10px; /* Optional: for a cleaner look */
+}
+
+
+.headerContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 20px 0px 100px 0px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.headerContainer.listMode {
+  margin: 20px 0px 0px 0px;
+}
+
+.headerTitle {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.headerTitle:hover {
+  transform: scale(1.02);
+}
+
+.headerDesc {
+  margin: 20px 0px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.headerBtn {
+  background-color: #440a21;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.headerBtn:hover {
+  background-color: #5d0c2d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.headerSearch {
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  max-width: 1024px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.headerSearch:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  margin: 5px;
+  flex: 1;
+  min-width: 200px;
+  transition: all 0.2s ease;
+}
+
+.headerSearchItem:hover {
+  box-shadow: 0 0 0 2px #440a21;
+}
+
+.headerIcon {
+  color: #440a21;
+  font-size: 1.1rem;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px;
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+.headerSearchText {
+  color: #555;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.headerSearchText:hover {
+  color: #440a21;
+}
+
+.date {
+  position: absolute;
+  top: 60px;
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.options {
+  z-index: 10;
+  position: absolute;
+  top: 60px;
+  background-color: white;
+  color: #555;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.optionItem {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.optionText {
+  font-weight: 500;
+  color: #333;
+}
+
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.optionCounterButton {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #440a21;
+  color: #440a21;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.optionCounterButton:hover {
+  background-color: #440a21;
+  color: white;
+}
+
+.optionCounterButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #f0f0f0;
+}
+
+.optionCounterNumber {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 15px 100px;
+  }
+  
+  .headerTitle {
+    font-size: 2rem;
+  }
+  
+  .headerDesc {
+    font-size: 1rem;
+  }
+  
+  .headerSearch {
+    flex-direction: column;
+    bottom: -80px;
+    padding: 15px;
+  }
+  
+  .headerSearchItem {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  .date, .options {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 350px;
+  }
+}

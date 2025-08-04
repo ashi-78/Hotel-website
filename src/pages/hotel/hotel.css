@@ -1,0 +1,598 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+}
+
+.hotelPage {
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  color: #333;
+  margin-top: 3.5cm;
+}
+
+/* Loading spinner */
+.loadingSpinner {
+  text-align: center;
+  padding: 100px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Main container */
+.hotelContainer {
+  max-width: 1500px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Slider overlay */
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+/* Image container */
+.sliderWrapper {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Actual image */
+.sliderImg {
+  max-width: 70vw;
+  max-height: 50wh;
+  border-radius: 12px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Close and arrow icons */
+.close,
+.arrow {
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  position: fixed;
+  transition: color 0.3s ease;
+  z-index: 10001;
+}
+
+.close:hover,
+.arrow:hover {
+  color: #ddd;
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+}
+
+/* Left and right arrows */
+.arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow.left {
+  left: 30px;
+}
+
+.arrow.right {
+  right: 30px;
+}
+
+
+
+/* Hotel Wrapper */
+.hotelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Image container with overlay */
+.hotelImageContainer {
+  position: relative;
+  width: 100%;
+  max-height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.hotelBackgroundImg {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  filter: brightness(0.65);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+.hotelBackgroundImg:hover {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.hotelDetailsOverlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background: rgba(51, 49, 49, 0.3);
+  padding: 30px 35px;
+  border-radius: 12px;
+  max-width: 100%;
+  color: #fff;
+  height: 90%;
+  
+  /* Animation */
+  animation: fadeSlideInLeft 1s ease forwards;
+}
+
+.hotelTitle {
+  font-size: 2.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.titleIcon {
+  color: #ffffff;
+}
+
+.hotelTitle1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hotelDesc {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* Thumbnails and book button */
+.hotelImages {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.hotelImg {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hotelImg:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.bookNow {
+  margin-left: auto;
+  padding: 10px 22px;
+  background-color: #120202;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(7, 1, 20, 0.5);
+}
+
+.bookNow:hover {
+  background-color: #120202;
+  box-shadow: 0 6px 22px rgba(3, 1, 22, 0.7);
+}
+
+/* Hotel content wrapper (extra images + details) */
+.hotelContentWrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: space-between;
+}
+
+/* Extra images and about texts container */
+.hotelExtraImagesSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+/* Content 1: image left, text right */
+.imageBlockRight {
+  flex: 1 1 48%;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  animation: fadeSlideInLeft 1s ease forwards;
+}
+
+.imageBlockRight img {
+  flex: 1 1 55%; /* Slightly more space */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  max-height: 18cm; /* Increased from 280px */
+  max-width: 18cm;
+  transition: transform 0.3s ease;
+  margin-bottom: 30px; /* Reduced from 10cm for better layout */
+  margin-top: 2px;
+}
+
+
+.imageBlockRight img:hover {
+  transform: scale(1.05);
+}
+
+.content1 {
+  flex: 1 1 50%;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  animation: fadeSlideInRight 1s ease forwards;
+  padding-left: 15px;
+}
+
+/* Content 2: image right, text left */
+.imageBlockLeft {
+  flex: 1 1 48%;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  animation: fadeSlideInLeft 1s ease forwards;
+}
+
+.imageBlockLeft img {
+  order: 2;
+  flex: 1 1 50%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  height: 300px;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.imageBlockLeft img:hover {
+  transform: scale(1.05);
+}
+
+.imageBlockLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: 3cm;
+  position: relative;
+}
+
+/* Wrapper for image with overlay text */
+
+.imageRightWrapper {
+  flex: 1 1 45%;
+  max-width: 500px;
+}
+
+.imageRightWrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content2Wrapper {
+  flex: 1 1 55%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 10px;
+  margin-top: 6cm;
+  color: #444242;
+  animation: fadeSlideInLeft 1s ease forwards;
+
+} 
+
+
+
+/* Other details below with fadeInUp animation */
+.otherdetails {
+  flex: 1 1 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 1rem;
+  color: #333;
+  animation: fadeInUp 1s ease forwards;
+  margin-top: 10px;
+}
+
+.locationtitle {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #222;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #120202;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.hotelAddress, .hotelDistance, .hotelPriceHighlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hotelAddress svg, .hotelDistance svg, .hotelPriceHighlight svg {
+  color: #120202;
+  font-size: 1.4rem;
+}
+
+.hotelDistance span, .hotelPriceHighlight span {
+  font-weight: 700;
+  color: #222;
+}
+
+/* Price and booking */
+.hotelDetailsPrice {
+  margin-top: 30px;
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 650px;
+  animation: fadein 1s ease forwards;
+
+}
+
+.hotelDetailsPrice h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #222;
+}
+
+.hotelDetailsPrice span {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.hotelDetailsPrice h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #120202;
+}
+
+.hotelDetailsPrice button {
+  width: fit-content;
+  padding: 12px 28px;
+  background-color: #120202;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 6px 20px rgba(18, 1, 2, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.hotelDetailsPrice button:hover {
+  background-color: #120202;
+  box-shadow: 0 8px 25px rgba(12, 1, 1, 0.8);
+}
+
+/* Animations */
+@keyframes fadeSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hotelDetailsOverlay {
+    max-width: 100%;
+    bottom: 30px;
+    left: 25px;
+    padding: 20px 25px;
+  }
+
+  .hotelTitle {
+    font-size: 2.2rem;
+  }
+  .hotelTitle1 {
+    font-size: 1.4rem;
+  }
+  .hotelDesc {
+    font-size: 1rem;
+  }
+
+  .hotelContentWrapper {
+    flex-direction: column;
+  }
+
+  .hotelExtraImagesSection {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+ 
+
+  .otherdetails {
+    padding: 20px;
+  }
+
+  .hotelDetailsPrice {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hotelDetailsOverlay {
+    max-width: 90%;
+    bottom: 20px;
+    left: 15px;
+    padding: 15px 18px;
+  }
+
+  .hotelTitle {
+    font-size: 1.6rem;
+  }
+  .hotelTitle1 {
+    font-size: 1.1rem;
+  }
+  .hotelDesc {
+    font-size: 0.9rem;
+  }
+
+  .hotelImages {
+    flex-wrap: wrap;
+  }
+
+  .hotelImg {
+    width: 48%;
+    height: 120px;
+  }
+
+  .bookNow {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .hotelDetailsPrice button {
+    width: 100%;
+  }
+}
+
+
+.otherImage {
+  width: 700px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  align-items: flex-start;
+}
+
+.otherImage:hover {
+  transform: scale(1.05);
+}
+
+/* Scrolling animation */
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.moreimage {
+  width: 39cm;
+  overflow: hidden;
+  padding: 20px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.moreimageTrack {
+  display: flex;
+  gap: 20px;
+  animation: scrollImages 15s linear infinite;
+ width: max-content;
+}
+
+
+.titleoffood{
+  width: 100%;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  background: grey;
+  
+  padding: 18px 25px;
+  border-radius: 12px;
+  font-family: 'Montserrat', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(20, 3, 6, 0.6);
+  letter-spacing: 0.05em;
+  user-select: none;
+  transition: background 0.4s ease;
+  cursor: default;
+
+}

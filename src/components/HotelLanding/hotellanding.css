@@ -1,0 +1,286 @@
+/* Base Styles */
+.hotelLanding {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  transform: scale(1.1);
+  z-index: 0;
+  will-change: transform, opacity;
+}
+
+.slide-bg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+/* Slide Content */
+.slide-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.slide-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  animation: slideIn 1.2s ease-out forwards;
+}
+
+.slide-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.2s ease-out 0.4s forwards;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.loginBtn, .registerBtn {
+  position: relative;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.loginBtn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+.registerBtn {
+  background: #e6d5b8;
+  color: #222;
+}
+
+.loginBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.registerBtn:hover {
+  background: #f0e5d1;
+  transform: translateY(-3px);
+}
+
+.loginBtn svg, .registerBtn svg {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+.loginBtn:hover svg, .registerBtn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Carousel Styles */
+.carousel-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  outline: none;
+  opacity: 0.7;
+}
+
+.indicator:hover, .indicator.active {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.indicator.active {
+  background: white;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  backdrop-filter: blur(5px);
+}
+
+.hero:hover .carousel-nav {
+  opacity: 1;
+}
+
+.carousel-nav:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 40px;
+}
+
+.next {
+  right: 40px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navigation */
+.navbarr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 10, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbarr.scrolled {
+  padding: 1rem 5%;
+  background-color: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .slide-title {
+    font-size: 2.5rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+  }
+
+  .loginBtn, .registerBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .carousel-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+
+  .prev {
+    left: 20px;
+  }
+
+  .next {
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 2rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+}

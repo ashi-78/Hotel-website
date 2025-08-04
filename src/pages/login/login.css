@@ -1,0 +1,123 @@
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/hotelimg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.food-login-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 450px;
+  padding: 0 20px;
+}
+
+.food-login-card {
+  background: rgba(123, 118, 118, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.food-login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.food-login-header h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.food-login-header p {
+  color: #c6c4c4;
+  font-size: 14px;
+}
+
+.food-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.food-input-group {
+  position: relative;
+}
+
+.food-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #e3dfdf;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.food-input-group input {
+  width: 100%;
+  padding: 14px 14px 14px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.food-input-group input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+}
+
+.food-input-icon {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  color: #888;
+}
+
+.food-login-button {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+
+.food-login-button:hover {
+  background: linear-gradient(135deg, #ff5252, #ff7676);
+  transform: translate}
+
+  .food-login-footer{
+    color: #c6c4c4;
+  }

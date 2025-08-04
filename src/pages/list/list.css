@@ -1,0 +1,178 @@
+/* Container and Wrapper */
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.listWrapper {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Search Section */
+.listSearch {
+  flex: 1;
+  background: linear-gradient(135deg, #b3b0c5, #221313);
+  padding: 25px 20px;
+  border-radius: 12px;
+  position: sticky;
+  top: 20px;
+  height: max-content;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+  animation: slideInLeft 1s ease;
+}
+
+.listSearch:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.lsTitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Input Items */
+.lsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.lsItem > label {
+  font-size: 14px;
+  color: #bbb;
+  font-weight: 500;
+}
+
+.lsItem > input {
+  height: 35px;
+  border: 1px solid #555;
+  background-color: #f2f0f0;
+  color: #050505;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: border 0.3s ease;
+}
+
+.lsItem > input:focus {
+  border: 1px solid #880e4f;
+  outline: none;
+}
+
+.lsItem > span {
+  height: 35px;
+  padding: 6px 10px;
+  background-color: #ffffff;
+  color: #242222;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.lsItem > span:hover {
+  background-color: #e3e3e3;
+}
+
+/* Options Section */
+.lsOptions {
+  padding: 10px 0;
+  color: white;
+}
+
+.lsOptionItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: white;
+  font-size: 14px;
+}
+
+.lsOptionText {
+  flex: 1;
+}
+
+.lsOptionInput {
+  width: 60px;
+  padding: 4px 6px;
+  border: 1px solid #444;
+  background-color: #7c7a7a;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.lsOptionInput:focus {
+  border-color: #bb2649;
+  outline: none;
+}
+
+/* Search Button */
+.listSearch > button {
+  padding: 10px;
+  background-color: #bb2649;
+  color: white;
+  border: none;
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.listSearch > button:hover {
+  background-color: #d61a4e;
+  transform: scale(1.02);
+}
+
+/* Result Area */
+.listResult {
+  flex: 3;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

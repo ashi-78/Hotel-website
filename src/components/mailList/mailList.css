@@ -1,0 +1,114 @@
+
+.mailContainer {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100vw; /* Full width */
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  height: 12cm;
+  overflow: hidden;
+}
+
+/* Lighter overlay to contrast with black footer */
+.mailOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15); /* Light overlay for contrast */
+  z-index: 1;
+}
+
+/* Glass effect container */
+.mailGlass {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  text-align: center;
+  padding: 2.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.mailTitle {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #efeeec;
+  text-shadow: 0 0 15px rgba(255, 204, 112, 0.5);
+}
+
+.mailDesc {
+  font-size: 18px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.mailInputWrapper {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mailInputWrapper:hover {
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.5);
+}
+
+.mailInput {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.mailInput::placeholder {
+  color: #ddd;
+}
+
+.subscribeBtn {
+  background: grey;
+  color: black;
+  padding: 0 1.5rem;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.subscribeBtn:hover {
+  background: #c9c9c8;
+  transform: scale(1.05);
+}
+
+.mailPrivacy {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.85;
+  font-style: italic;
+  color: #323231;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
