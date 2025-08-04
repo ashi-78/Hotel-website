@@ -5,8 +5,8 @@ import Carousel from "../../components/carousel/carousel"; // import carousel
 import "./home.css";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
 import Featured from "../../components/featured/featured";
+import Header from "../../components/Header/headertemp";
 
 const Home = () => {
   return (
