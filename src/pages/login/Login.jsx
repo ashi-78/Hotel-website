@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/login", credentials);
+      const res = await axios.post("https://hotel-backend-gzn1.onrender.com/api/auth/login", credentials);
 
       // ✅ Merge details and isAdmin into one object
       dispatch({ 
