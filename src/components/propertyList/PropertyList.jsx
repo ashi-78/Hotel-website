@@ -10,6 +10,7 @@ import c from "../../assets/c.webp";
 import r from "../../assets/r.avif";
 import v from "../../assets/v.avif";
 import t from "../../assets/h3.avif";
+ const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
 const PropertyList = () => {
   const { data, loading, error } = useFetch("/hotels/countByType");
@@ -17,7 +18,6 @@ const PropertyList = () => {
   const [similarHotels, setSimilarHotels] = useState([]);
   const [selectedType, setSelectedType] = useState("");
   const navigate = useNavigate();
- const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
   const images = [a, c, r, v, t]; // 🖼️ Local image references
 

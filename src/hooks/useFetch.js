@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 // ✅ Export BASE_URL so other files can import it
-export const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
+ const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
 const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
