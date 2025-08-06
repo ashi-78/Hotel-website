@@ -9,7 +9,9 @@ import "./reserve.css";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+  const { data, loading, error } = useFetch(
+    `https://hotel-backend-gzn1.onrender.com/api/hotels/room/${hotelId}`
+  );
   const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {
@@ -60,9 +62,12 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          return axios.put(`/rooms/availability/${roomId}`, {
-            dates: alldates,
-          });
+          return axios.put(
+            `https://hotel-backend-gzn1.onrender.com/api/rooms/availability/${roomId}`,
+            {
+              dates: alldates,
+            }
+          );
         })
       );
       setOpen(false);
@@ -107,7 +112,10 @@ const Reserve = ({ setOpen, hotelId }) => {
               <div className="rSelectRooms">
                 {Array.isArray(item?.roomNumbers) &&
                   item.roomNumbers.map((roomNumber) => (
-                    <div className="room" key={roomNumber?._id || Math.random()}>
+                    <div
+                      className="room"
+                      key={roomNumber?._id || Math.random()}
+                    >
                       <label>{roomNumber?.number || "N/A"}</label>
                       <input
                         type="checkbox"
