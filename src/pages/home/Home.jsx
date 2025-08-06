@@ -7,7 +7,6 @@ import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
 import Featured from "../../components/featured/featured";
 import Header from "../../components/Header/header";
-import { BASE_URL } from "../../hooks/useFetch";
 
 const Home = () => {
   return (

@@ -1,6 +1,5 @@
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
-import { BASE_URL } from "../../hooks/useFetch";
 
 
 import h1 from "../../assets/h14.avif";

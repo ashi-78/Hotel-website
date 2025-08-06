@@ -3,7 +3,8 @@ import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css";
-import { BASE_URL } from "../../hooks/useFetch";
+
+ const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({

@@ -6,8 +6,8 @@ import { SearchContext } from "../../context/SearchContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./reserve.css";
-import { BASE_URL } from "../../hooks/useFetch";
 
+ const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
