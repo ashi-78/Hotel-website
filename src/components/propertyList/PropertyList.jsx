@@ -2,7 +2,6 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import "./propertyList.css";
-import { BASE_URL } from "../../hooks/useFetch";
 
 
 // ✅ Local images
@@ -18,6 +17,7 @@ const PropertyList = () => {
   const [similarHotels, setSimilarHotels] = useState([]);
   const [selectedType, setSelectedType] = useState("");
   const navigate = useNavigate();
+ const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
   const images = [a, c, r, v, t]; // 🖼️ Local image references
 
