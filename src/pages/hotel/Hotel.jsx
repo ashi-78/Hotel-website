@@ -17,6 +17,7 @@ import Reserve from "../../components/reserve/Reserve";
 import MailList from "../../components/mailList/mailList";
 import Footer from "../../components/footer/footer";
 import useFetch from "../../hooks/useFetch";
+import { BASE_URL } from "../../hooks/useFetch";
 
 const Hotel = () => {
   const location = useLocation();

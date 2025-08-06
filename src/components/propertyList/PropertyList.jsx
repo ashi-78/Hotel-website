@@ -2,6 +2,7 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import "./propertyList.css";
+import { BASE_URL } from "../../hooks/useFetch";
 
 
 // ✅ Local images

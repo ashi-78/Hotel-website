@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css";
+import { BASE_URL } from "../../hooks/useFetch";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -21,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("https://hotel-backend-gzn1.onrender.com/api/auth/login", credentials);
+      const res = await axios.post(`${BASE_URL}/auth/login`, credentials);
 
       // ✅ Merge details and isAdmin into one object
       dispatch({ 
