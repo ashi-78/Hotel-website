@@ -11,7 +11,7 @@ import v from "../../assets/v.avif";
 import t from "../../assets/h3.avif";
 
 const PropertyList = () => {
-  const { data, loading, error } = useFetch("/api/hotels/countByType");
+  const { data, loading, error } = useFetch("https://hotel-backend-gzn1.onrender.com//api/hotels/countByType");
   const [showSimilar, setShowSimilar] = useState(false);
   const [similarHotels, setSimilarHotels] = useState([]);
   const [selectedType, setSelectedType] = useState("");
@@ -21,7 +21,7 @@ const PropertyList = () => {
 
   const handlePropertyClick = (type) => {
     setSelectedType(type);
-    fetch(`/api/hotels?type=${type}`)
+    fetch(`https://hotel-backend-gzn1.onrender.com/api/hotels?type=${type}`)
       .then((res) => res.json())
       .then((hotels) => {
         setSimilarHotels(hotels);

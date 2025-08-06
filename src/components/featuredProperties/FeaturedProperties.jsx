@@ -7,7 +7,7 @@ import v from "../../assets/v.avif";
 import t from "../../assets/h3.avif";
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch("/api/hotels?featured=true&limit=10");
+  const { data, loading, error } = useFetch("https://hotel-backend-gzn1.onrender.com/api/hotels?featured=true&limit=10");
 
   console.log("FeaturedProperties", data);
 
