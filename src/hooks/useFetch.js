@@ -1,31 +1,37 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// Your live backend base URL
 const BASE_URL = "https://hotel-backend-gzn1.onrender.com/api";
 
-const useFetch = (url) => {
+const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null); // null instead of false
-
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      const res = await axios.get(`${BASE_URL}${url}`);
-      setData(res.data);
-      setError(null);
-    } catch (err) {
-      setError(err.response?.data?.message || err.message || "Something went wrong");
-    }
-    setLoading(false);
-  };
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(`${BASE_URL}${endpoint}`);
+        setData(res.data);
+      } catch (err) {
+        setError(err);
+      }
+      setLoading(false);
+    };
     fetchData();
-  }, [url]);
+  }, [endpoint]);
 
-  const reFetch = () => {
-    fetchData();
+  const reFetch = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(`${BASE_URL}${endpoint}`);
+      setData(res.data);
+    } catch (err) {
+      setError(err);
+    }
+    setLoading(false);
   };
 
   return { data, loading, error, reFetch };
