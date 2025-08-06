@@ -17,7 +17,7 @@ import h13 from "../../assets/h3.avif";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    "https://hotel-backend-gzn1.onrender.com/api/hotels/countByCity?cities=Berlin,Madrid,London,New York,Noida,Dubai,Paris,Tokyo,Lucknow,Rome,Bangkok,Vienna,Miami"
+    "/hotels/countByCity?cities=Berlin,Madrid,London,New York,Noida,Dubai,Paris,Tokyo,Lucknow,Rome,Bangkok,Vienna,Miami"
   );
 
   return (

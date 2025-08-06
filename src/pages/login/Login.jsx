@@ -24,14 +24,10 @@ const Login = () => {
       const res = await axios.post("https://hotel-backend-gzn1.onrender.com/api/auth/login", credentials);
 
       // ✅ Merge details and isAdmin into one object
-      dispatch({
-  type: "LOGIN_SUCCESS",
-  payload: {
-    ...res.data.details,  // user details
-    isAdmin: res.data.isAdmin // keep isAdmin at top level
-  }
-});
-
+      dispatch({ 
+        type: "LOGIN_SUCCESS", 
+        payload: { ...res.data.details, isAdmin: res.data.isAdmin } 
+      });
 
       navigate("/home");
     } catch (err) {

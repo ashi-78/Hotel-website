@@ -9,7 +9,7 @@ import "./reserve.css";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`https://hotel-backend-gzn1.onrender.com/api/hotels/room/${hotelId}`);
+  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
   const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {
@@ -60,7 +60,7 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          return axios.put(`https://hotel-backend-gzn1.onrender.com/api/rooms/availability/${roomId}`, {
+          return axios.put(`/rooms/availability/${roomId}`, {
             dates: alldates,
           });
         })
