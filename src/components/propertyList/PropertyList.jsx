@@ -2,6 +2,8 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import "./propertyList.css";
+import { BASE_URL } from "../../hooks/useFetch";
+
 
 // ✅ Local images
 import a from "../../assets/h5.webp";
@@ -11,7 +13,7 @@ import v from "../../assets/v.avif";
 import t from "../../assets/h3.avif";
 
 const PropertyList = () => {
-  const { data, loading, error } = useFetch("hotels/countByType");
+  const { data, loading, error } = useFetch("/hotels/countByType");
   const [showSimilar, setShowSimilar] = useState(false);
   const [similarHotels, setSimilarHotels] = useState([]);
   const [selectedType, setSelectedType] = useState("");
@@ -21,7 +23,7 @@ const PropertyList = () => {
 
   const handlePropertyClick = (type) => {
     setSelectedType(type);
-    fetch(`/hotels?type=${type}`)
+    fetch(`${BASE_URL}/hotels?type=${type}`)
       .then((res) => res.json())
       .then((hotels) => {
         setSimilarHotels(hotels);
