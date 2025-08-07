@@ -9,7 +9,7 @@ const AdminRedirect = () => {
     const adminUrl =
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000" // Local admin
-        : "https://admin.elysianescapes.com"; // Live admin
+        : "https://elysian-admin-panel.vercel.app/"; // Live admin
 
     // Replace current URL (no history entry)
     window.location.replace(adminUrl);
